@@ -15,13 +15,12 @@ const formatLikes = (number) => {
 function Projects() {
   const [likedProjects, setLikedProjects] = useState([]);
   const [likesMap, setLikesMap] = useState({});
+  const [loadingLikes, setLoadingLikes] = useState(true); // حالة التحميل
 
   useEffect(() => {
-    // تحميل المشاريع المعجبة من localStorage
     const storedLikes = JSON.parse(localStorage.getItem("likedProjects")) || [];
     setLikedProjects(storedLikes);
 
-    // جلب عدد الإعجابات من الخادم
     const fetchLikes = async () => {
       try {
         const res = await axios.get("/api/projects/like");
@@ -32,6 +31,8 @@ function Projects() {
         setLikesMap(likeData);
       } catch (error) {
         console.error("Error fetching likes:", error);
+      } finally {
+        setLoadingLikes(false); // عند الانتهاء من التحميل
       }
     };
 
@@ -59,8 +60,7 @@ function Projects() {
       }));
     } catch (error) {
       console.error("Failed to update like:", error);
-      // استعادة الحالة السابقة في حالة الخطأ
-      setLikedProjects(likedProjects);
+      setLikedProjects(likedProjects); // استعادة الحالة السابقة
     }
   };
 
@@ -126,8 +126,14 @@ function Projects() {
                     }`}
                   />
                 </motion.button>
+
+                {/* الرقم أو السكيليتون */}
                 <span className="text-neutral-400">
-                  {formatLikes(likesMap[project.id] || 0)}
+                  {loadingLikes ? (
+                    <div className="w-5 h-4 bg-neutral-700 rounded animate-pulse" />
+                  ) : (
+                    formatLikes(likesMap[project.id] || 0)
+                  )}
                 </span>
               </div>
             </motion.div>
