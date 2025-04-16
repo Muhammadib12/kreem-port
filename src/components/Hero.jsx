@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { HERO_CONTENT } from '../constants';
-import Muhammad from '../assets/Muhammad.png';
+import kreem from '../assets/kreem.jpeg';
 import { motion } from 'framer-motion';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 
@@ -31,7 +31,7 @@ function Hero() {
 
   const [text] = useTypewriter({
     words: startTyping
-      ? ['Full Stack Developer', 'React Developer', 'NodeJS Developer']
+      ? ['Software Engineer', 'React Developer', 'Java Dev']
       : [''], 
     loop: true,
     typeSpeed: 200,
@@ -50,7 +50,7 @@ function Hero() {
               animate="visible"
               className="pb-16 text-6xl font-thin tracking-tight lg:mt-16 lg:text-8xl"
             >
-              Muhammad Ibrahim
+              Kareem Zeedan
             </motion.h1>
 
             {/* 🔹 التأكد من أن التأثير يبدأ فقط بعد 0.5 ثانية */}
@@ -84,7 +84,7 @@ function Hero() {
               className="relative bg-gradient-to-b from-gray-800 via-gray-900 to-black p-4 rounded-3xl shadow-xl"
             >
               <img
-                src={Muhammad}
+                src={kreem}
                 alt="Muhammad Ibrahim"
                 className="rounded-3xl object-cover h-96 w-72"
               />

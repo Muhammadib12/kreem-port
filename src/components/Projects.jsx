@@ -1,68 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { PROJECTS } from "../constants";
 import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
-import axios from "axios";
 
-axios.defaults.baseURL = "https://backtoport-1.onrender.com";
 
-const formatLikes = (number) => {
-  if (number >= 1e6) return (number / 1e6).toFixed(1).replace(/\.0$/, "") + "M";
-  if (number >= 1e3) return (number / 1e3).toFixed(1).replace(/\.0$/, "") + "K";
-  return number.toString();
-};
+
 
 function Projects() {
-  const [likedProjects, setLikedProjects] = useState([]);
-  const [likesMap, setLikesMap] = useState({});
-  const [loadingLikes, setLoadingLikes] = useState(true); // حالة التحميل
 
-  useEffect(() => {
-    const storedLikes = JSON.parse(localStorage.getItem("likedProjects")) || [];
-    setLikedProjects(storedLikes);
-
-    const fetchLikes = async () => {
-      try {
-        const res = await axios.get("/api/projects/like");
-        const likeData = {};
-        res.data.forEach((item) => {
-          likeData[item.projectId] = item.likes;
-        });
-        setLikesMap(likeData);
-      } catch (error) {
-        console.error("Error fetching likes:", error);
-      } finally {
-        setLoadingLikes(false); // عند الانتهاء من التحميل
-      }
-    };
-
-    fetchLikes();
-  }, []);
-
-  const handleLike = async (projectId) => {
-    const isLiked = likedProjects.includes(projectId);
-    const updatedLikes = isLiked
-      ? likedProjects.filter((id) => id !== projectId)
-      : [...likedProjects, projectId];
-
-    setLikedProjects(updatedLikes);
-    localStorage.setItem("likedProjects", JSON.stringify(updatedLikes));
-
-    try {
-      await axios.post("/api/projects/like", {
-        projectId,
-        action: isLiked ? "unlike" : "like",
-      });
-
-      setLikesMap((prev) => ({
-        ...prev,
-        [projectId]: (prev[projectId] || 0) + (isLiked ? -1 : 1),
-      }));
-    } catch (error) {
-      console.error("Failed to update like:", error);
-      setLikedProjects(likedProjects); // استعادة الحالة السابقة
-    }
-  };
 
   return (
     <div className="border-b border-neutral-900 pb-4">
@@ -111,31 +55,7 @@ function Projects() {
                 />
               </a>
 
-              <div className="flex items-center gap-2 mb-4">
-                <motion.button
-                  whileTap={{ scale: 0.9 }}
-                  onClick={() => handleLike(project.id)}
-                  className="focus:outline-none"
-                >
-                  <Heart
-                    size={20}
-                    className={`transition-all duration-300 ${
-                      likedProjects.includes(project.id)
-                        ? "text-red-500 fill-red-500"
-                        : "text-neutral-400"
-                    }`}
-                  />
-                </motion.button>
-
-                {/* الرقم أو السكيليتون */}
-                <span className="text-neutral-400">
-                  {loadingLikes ? (
-                    <div className="w-5 h-4 bg-neutral-700 rounded animate-pulse" />
-                  ) : (
-                    formatLikes(likesMap[project.id] || 0)
-                  )}
-                </span>
-              </div>
+              
             </motion.div>
 
             <motion.div

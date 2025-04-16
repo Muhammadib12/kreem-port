@@ -1,5 +1,3 @@
-import React from 'react'
-import Muhammad2 from '../assets/Muhammad2.png';
 import { ABOUT_TEXT } from '../constants';
 import {motion} from 'framer-motion';
 function About() {

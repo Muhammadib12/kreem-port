@@ -37,52 +37,31 @@ function Technologies() {
           animate="animate"className='rounded-2xl border-4 border-neutral-800 p-4'>
                     <SiTailwindcss className='text-7xl text-cyan-400'/>
             </motion.div>
+           
             <motion.div variants={iconVariants(3.5)}
-          initial="initial"
-          animate="animate" className='rounded-2xl border-4 border-neutral-800 p-4'>
-                    <TbBrandNextjs className='text-7xl text-gray-600'/>
-            </motion.div>
-            <motion.div variants={iconVariants(4)}
           initial="initial"
           animate="animate" className='rounded-2xl border-4 border-neutral-800 p-4'>
                     <SiHtml5 className='text-7xl text-orange-400'/>
             </motion.div>
-            <motion.div variants={iconVariants(4.5)}
+            <motion.div variants={iconVariants(4)}
           initial="initial"
           animate="animate" className='rounded-2xl border-4 border-neutral-800 p-4'>
                     <SiCss3 className='text-7xl text-cyan-400'/>
             </motion.div>
-            <motion.div variants={iconVariants(5)}
+            <motion.div variants={iconVariants(4.5)}
           initial="initial"
           animate="animate" className='rounded-2xl border-4 border-neutral-800 p-4'>
                     <SiJavascript className='text-7xl text-yellow-400'/>
             </motion.div>
-            <motion.div variants={iconVariants(5.5)}
-          initial="initial"
-          animate="animate" className='rounded-2xl border-4 border-neutral-800 p-4'>
-                    <SiPhp className='text-7xl text-blue-900'/>
-            </motion.div>
-            <motion.div variants={iconVariants(6)}
-          initial="initial"
-          animate="animate" className='rounded-2xl border-4 border-neutral-800 p-4'>
-                    <SiMongodb className='text-7xl text-green-600'/>
-            </motion.div>
-            <motion.div variants={iconVariants(6.5)}
-          initial="initial"
-          animate="animate" className='rounded-2xl border-4 border-neutral-800 p-4'>
-                    <SiExpress className='text-7xl text-yellow-300'/>
-            </motion.div>
-            <motion.div variants={iconVariants(7)}
+           
+           
+            <motion.div variants={iconVariants(5)}
           initial="initial"
           animate="animate" className='rounded-2xl border-4 border-neutral-800 p-4'>
                     <SiMysql className='text-7xl text-blue-800'/>
             </motion.div>
 
-            <motion.div variants={iconVariants(7.5)}
-          initial="initial"
-          animate="animate" className='rounded-2xl border-4 border-neutral-800 p-4'>
-            <SiSpringboot className='text-7xl text-green-500'/>
-        </motion.div>
+           
 
         <motion.div variants={iconVariants(7.8)} initial="initial" animate="animate" className='rounded-2xl border-4 border-neutral-800 p-4'>
             <FaJava className='text-7xl text-red-600'/>

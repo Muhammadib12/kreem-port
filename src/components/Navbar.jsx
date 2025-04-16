@@ -1,9 +1,7 @@
 import React from "react";
-import MuhammadLogo from "../assets/MuhammadLogo.webp";
 import { FaLinkedin, FaGithub, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
-import SmallIcon from "./SmallIcon";
-
+import kreem from "../assets/kreem.jpeg"
 const iconVariants = (duration) => ({
   initial: { y: -10 },
   animate: {
@@ -26,7 +24,7 @@ function Navbar() {
     >
       <div id="home" className="flex  flex-shrink-0 items-center">
         <img
-          src={MuhammadLogo}
+          src={kreem}
           className="h-15 w-15 mx-2 filter brightness-70 border-none rounded-full  transform transition-transform duration-500 hover:rotate-360"
           alt="Logo"
         />
@@ -35,7 +33,7 @@ function Navbar() {
       {/* Icons */}
       <div className="flex space-x-4 gap-4  text-2xl">
         <a
-          href="https://api.whatsapp.com/send?phone=972506567035&text= שלום מוחמד
+          href="https://api.whatsapp.com/send?phone=972556657503&text= שלום כרים
 "
           target="_blank"
         >
@@ -43,27 +41,21 @@ function Navbar() {
         </a>
 
         <a
-          href="https://www.linkedin.com/in/muhammad-ibrahem-0b22002a3/"
+          href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQHiiUgXpKuRfAAAAZY--ZBoPaXs2Ua4MIKPIb6skBEkpHT2ENmG0PP9UUAyG5XjjrY_pHxb_m0d6LjCZsL5WSU74zMEvx0Mk0TgFyaCfGGGqVqB51B0xznappaCwlszgZdLZUk=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fkareem-zeedan-81baab273%2F"
           target="_blank"
         >
           <FaLinkedin className="text-blue-400 cursor-pointer hover:-translate-y-1 transition-transform duration-300" />
         </a>
-        <a href="https://github.com/Muhammadib12" target="_blank">
+        <a href="https://github.com/SharkZeedan" target="_blank">
           <FaGithub className="cursor-pointer hover:translate-y-1 transition-transform duration-300" />
         </a>
         <a
-          href="https://www.instagram.com/muhammadibra403/profilecard/?igsh=YXRoNXg1ZXM3d3gz"
+          href="https://www.instagram.com/kareem_zeedan?igsh=OHQwY3VmYnZhd2Y5&utm_source=qr"
           target="_blank"
         >
           <FaInstagram className="text-orange-600 cursor-pointer hover:-translate-y-1 transition-transform duration-300" />
         </a>
-        <a
-          href="https://www.alljobs.co.il/user/profile/full-profile"
-          target="_blank"
-          className=" cursor-pointer hover:translate-y-1 transition-transform duration-300"
-        >
-          <SmallIcon />
-        </a>
+       
       </div>
     </motion.nav>
   );
