@@ -1,4 +1,7 @@
 import project1 from "../assets/projects/so7ba.jpg";
+import project2 from "../assets/projects/proj2.jpg";
+import project3 from "../assets/projects/braudeanal.jpg";
+import project4 from "../assets/projects/ucare.jpg";
 
 export const HERO_CONTENT = `My name is Kareem Zeedan, a motivated and ambitious 24-year-old software engineer. I recently completed my Bachelor of Science degree in Software Engineering. I am fluent in both English and Hebrew, and possess strong communication skills in both languages.
 
@@ -20,6 +23,35 @@ export const PROJECTS = [
     technologies: ["React", "Talwind CSS", "JavaScript", "Firebase"],
     url: "https://rahma-cafe.vercel.app/",
   },
+  {
+    id: 2,
+    title: "Phase - Farm",
+    image: project2,
+    description:
+      "Developed a comprehensive web-based platform designed to assist farmers in monitoring crop conditions through sensor data collected by a custom-built robot. The robot, programmed using Blockly and Python, integrates principles of Industrial Internet of Things (IIoT) and Industry 4.0, showcasing a combination of mechanical, software, and hardware engineering skills. Deployed in the field, the robot continuously monitors soil humidity levels, alerts the farmer when irrigation is required, and provides the ability to remotely activate irrigation systems, thereby optimizing water usage and improving crop health.",
+    technologies: ["React", "Talwind CSS", "JavaScript"],
+    url: "https://phase2-smart-farm.vercel.app/",
+  },
+  {
+    id: 3,
+    title: "Braude - Analayzer",
+    image: project3,
+    description:
+      "Designed and developed a dynamic digital menu web application for a newly established business. The system displays available menu items and integrates with Firebase Firestore for real-time data storage and retrieval. Implemented an admin control panel that allows the business owner to efficiently manage menu content, including adding new items, deleting existing ones, and marking items as newly available. The solution enhances user accessibility and streamlines menu updates with a user-friendly interface.",
+    technologies: ["React", "Talwind CSS", "JavaScript"],
+    url: "https://braude-analyzer.vercel.app/",
+  },
+  
+  {
+    id: 4,
+    title: "UCare - Older",
+    image: project4,
+    description:
+      "A website dedicated to the golden age people and our elderly that enables them track their health status and medicine requiered.",
+    technologies: ["React", "Talwind CSS", "JavaScript"],
+    url: "https://u-care-z98n.vercel.app/",
+  },
+  
   
   
   

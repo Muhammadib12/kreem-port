@@ -31,7 +31,7 @@ function Hero() {
 
   const [text] = useTypewriter({
     words: startTyping
-      ? ['Software Engineer', 'React Developer', 'Java Dev']
+      ? ['Software Engineer', 'React Developer', 'Java Developer',"Sql"]
       : [''], 
     loop: true,
     typeSpeed: 200,
